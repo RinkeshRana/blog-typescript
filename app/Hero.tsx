@@ -1,4 +1,8 @@
-function Hero() {
+import { auth } from "@/auth";
+import Link from "next/link";
+
+async function Hero() {
+  const session = await auth();
   return (
     <div className="flex justify-center items-center min-h-[800px] text-center ">
       <div>
@@ -10,13 +14,26 @@ function Hero() {
             Read. Write. Deepen your understanding.
           </div>
           <div className="mt-5 md:mt-3 font-semibold tracking-tight">
-            Last chance! 3 days left to get 20% off membership.
+            Share your knowledge with the world. Together, we can make the web a
+            better place.
           </div>
         </div>
         <div className="mt-12 ">
-          <button className="px-8 py-2 bg-black text-white rounded-full tracking-tight">
-            Become a member
-          </button>
+          {!session ? (
+            <Link
+              className="px-8 py-2 bg-black text-white rounded-full tracking-tight"
+              href={"/api/auth/signin"}
+            >
+              Become a member
+            </Link>
+          ) : (
+            <Link
+              className="px-8 py-2 bg-black text-white rounded-full tracking-tight no-underline"
+              href={"/blogs"}
+            >
+              Browse Blogs
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ async function Page() {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 min-h-dvh">
       <Editor holder="editorjs-container" />
     </div>
   );

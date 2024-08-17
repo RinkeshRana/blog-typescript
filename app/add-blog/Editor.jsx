@@ -5,8 +5,10 @@ import EditorJS from "@editorjs/editorjs";
 import classes from "./editorjs.module.css";
 import { useEffect, useRef, useState } from "react";
 import { EDITOR_CONFIG } from "./editorjs.config";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { randomId } from "@/lib/utils";
+import { addBlog } from "../actions";
+import { toast } from "react-toastify";
 
 const Editor = ({ holder }) => {
   const [data, setData] = useState({
@@ -48,7 +50,6 @@ const Editor = ({ holder }) => {
         async onChange(api, event) {
           const data = await api.saver.save();
           setData(data);
-          console.log("Saved Data: ", data);
         },
         i18n: {
           toolNames: {

@@ -35,8 +35,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         "
         >
           <Author
-            name={"Rinkesh Rana"}
-            avatar={"https://avatars.githubusercontent.com/u/56167853?v=4"}
+            name={fetchedBlog.author}
+            avatar={fetchedBlog.avatar}
+            email={fetchedBlog.email}
           />
         </div>
         {fetchedBlog.blocks.map((block) => {

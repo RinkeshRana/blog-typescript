@@ -1,6 +1,7 @@
 export type BlogAuthor = {
   name: string;
   avatar: string;
+  email: string;
 };
 
 export type Blog = {
@@ -17,7 +18,11 @@ export type Blog = {
   version: string;
   title: string;
   subTitle?: string;
-  author: BlogAuthor;
+  author: string;
+  avatar: string;
+  email: string;
+  slug?: string;
+  createdAt?: Date;
 };
 
 export type HeaderBlock = {
