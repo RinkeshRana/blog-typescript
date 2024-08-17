@@ -31,3 +31,36 @@ body {
     text-wrap: balance;
   }
 }
+
+/* editorjs.module.css */
+/* editorjs.module.css */
+.ce-popover__items .ce-popover-item {
+  background-color: rgb(var(--background-end-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+.ce-popover__container {
+  background-color: rgb(var(--background-end-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+.cdx-search-field .ce-popover__search {
+  background-color: rgb(var(--background-end-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+.ce-popover--opened > .ce-popover__container {
+  border: 1px solid rgb(68, 63, 63);
+}
+
+.ce-popover__items .ce-popover-item:hover {
+  background-color: rgb(68, 63, 63);
+  color: rgb(var(--foreground-rgb));
+}
+
+.cdx-search-field__input {
+  color: black;
+}
+a {
+  text-decoration: underline;
+}
